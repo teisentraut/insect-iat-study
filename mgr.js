@@ -72,13 +72,13 @@ define(['managerAPI',
             header: 'Welcome'
         }],
 
-        raceiat_instructions: [{
-            inherit: 'instructions',
-            name: 'raceiat_instructions',
-            templateUrl: 'raceiat_instructions.jst',
-            title: 'IAT Instructions',
-            header: 'Implicit Association Test'
-        }],
+        preiat_instructions: [{
+    inherit: 'instructions',
+    name: 'preiat_instructions',
+    templateUrl: 'preiat_instructions.jst',
+    title: 'IAT Instructions',
+    header: 'Insect–Mammal Implicit Association Test'
+}],
 
         explicits: [{
             type: 'quest',
@@ -86,11 +86,11 @@ define(['managerAPI',
             scriptUrl: 'explicits.js'
         }],
 
-        raceiat: [{
-            type: 'time',
-            name: 'raceiat',
-            scriptUrl: 'raceiat.js'
-        }],
+        preiat: [{
+    type: 'time',
+    name: 'preiat',
+    scriptUrl: 'preiat.js'
+}],
 
         lastpage: [{
             type: 'message',
@@ -164,8 +164,8 @@ define(['managerAPI',
                 {
                     mixer: 'wrapper',
                     data: [
-                        {inherit: 'raceiat_instructions'},
-                        {inherit: 'raceiat'}
+                        {inherit: 'preiat_instructions'},
+{inherit: 'preiat'}
                     ]
                 }
             ]
