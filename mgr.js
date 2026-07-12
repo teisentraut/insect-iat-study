@@ -99,6 +99,85 @@ presurvey: [{
     scriptUrl: 'preiat.js'
 }],
 
+video_page: [{
+    type: 'message',
+
+    template: [
+        '<div style="max-width:900px; margin:30px auto; padding:25px; text-align:center;">',
+
+        '<h2>Please watch the following video</h2>',
+
+        '<p>',
+        'Watch the entire video with your sound turned on. ',
+        'The Continue button will appear after the video finishes.',
+        '</p>',
+
+        '<video id="study-video" controls playsinline preload="metadata" ',
+        'style="width:100%; max-width:800px; background:black; margin-top:20px;">',
+
+        '<source src="<%= tasksData.videoUrl %>" type="video/mp4">',
+
+        'Your browser does not support HTML5 video.',
+
+        '</video>',
+
+        '<p id="video-error" ',
+        'style="display:none; color:#b00020; font-weight:bold; margin-top:20px;">',
+        'The video could not be loaded. Please refresh the page.',
+        '</p>',
+
+        '<div id="video-proceed" style="display:none; margin-top:30px;">',
+
+        '<button type="button" pi-message-done ',
+        'style="padding:12px 30px; font-size:18px; cursor:pointer;">',
+        'Continue',
+        '</button>',
+
+        '</div>',
+        '</div>'
+    ].join('\n'),
+
+    load: function() {
+        var video = document.getElementById('study-video');
+        var proceed = document.getElementById('video-proceed');
+        var errorMessage = document.getElementById('video-error');
+
+        if (!video || !proceed) {
+            return;
+        }
+
+        proceed.style.display = 'none';
+
+        video.addEventListener('ended', function() {
+            proceed.style.display = 'block';
+        });
+
+        video.addEventListener('error', function() {
+            if (errorMessage) {
+                errorMessage.style.display = 'block';
+            }
+        });
+    }
+}],
+
+insect_video: [{
+    inherit: 'video_page',
+    name: 'insect_video',
+
+    data: {
+        videoUrl: 'videos/insect-video.mp4'
+    }
+}],
+
+control_video: [{
+    inherit: 'video_page',
+    name: 'control_video',
+
+    data: {
+        videoUrl: 'videos/control-video.mp4'
+    }
+}],
+		
 insect_video: [{
     type: 'message',
     name: 'insect_video',
@@ -216,7 +295,9 @@ control_video: [{
         {inherit: 'intro'},
         {inherit: 'presurvey'},
 {inherit: 'preiat_instructions'},
-{inherit: 'preiat'},{
+{inherit: 'preiat'},
+
+{
     mixer: 'choose',
 
     data: [
@@ -225,10 +306,12 @@ control_video: [{
 
             data: [
                 {
-                    type: 'setValue',
-                    variableName: 'video_condition',
-                    value: 'experimental',
-                    post: true
+                    type: 'post',
+                    name: 'video_condition',
+
+                    data: {
+                        video_condition: 'experimental'
+                    }
                 },
 
                 {
@@ -242,10 +325,12 @@ control_video: [{
 
             data: [
                 {
-                    type: 'setValue',
-                    variableName: 'video_condition',
-                    value: 'control',
-                    post: true
+                    type: 'post',
+                    name: 'video_condition',
+
+                    data: {
+                        video_condition: 'control'
+                    }
                 },
 
                 {
@@ -256,7 +341,7 @@ control_video: [{
     ]
 },
 
-		{inherit: 'uploading'},
+{inherit: 'uploading'},
         {inherit: 'lastpage'},
         {inherit: 'redirect'}
     ]);
