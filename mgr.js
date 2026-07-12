@@ -229,6 +229,12 @@ debrief: [{
     }
 },
 
+{
+    type: 'post',
+    name: 'video_condition',
+    variableName: 'video_condition'
+},
+		
 {type: 'isTouch'},
 
 {
@@ -240,18 +246,7 @@ debrief: [{
 {inherit: 'preiat_instructions'},
 {inherit: 'preiat'},
 
-{
-    type: 'setValue',
-    variableName: 'video_condition',
 
-    fn: function() {
-        return Math.random() < 0.5
-            ? 'experimental'
-            : 'control';
-    },
-
-    post: true
-},
 
 {
     mixer: 'branch',
