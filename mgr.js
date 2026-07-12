@@ -223,45 +223,37 @@ postiat: [{
 {inherit: 'preiat'},
 
 {
-    mixer: 'choose',
+    type: 'setValue',
+    variableName: 'video_condition',
+
+    fn: function() {
+        return Math.random() < 0.5
+            ? 'experimental'
+            : 'control';
+    },
+
+    post: true
+},
+
+{
+    mixer: 'branch',
+
+    conditions: [
+        {
+            compare: 'global.video_condition',
+            to: 'experimental'
+        }
+    ],
 
     data: [
         {
-            mixer: 'wrapper',
+            inherit: 'insect_video'
+        }
+    ],
 
-            data: [
-                {
-                    type: 'post',
-                    name: 'video_condition',
-
-                    data: {
-                        video_condition: 'experimental'
-                    }
-                },
-
-                {
-                    inherit: 'insect_video'
-                }
-            ]
-        },
-
+    elseData: [
         {
-            mixer: 'wrapper',
-
-            data: [
-                {
-                    type: 'post',
-                    name: 'video_condition',
-
-                    data: {
-                        video_condition: 'control'
-                    }
-                },
-
-                {
-                    inherit: 'control_video'
-                }
-            ]
+            inherit: 'control_video'
         }
     ]
 },
