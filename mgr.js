@@ -34,7 +34,13 @@ var videoCondition = API.shuffle([
     }
 
     API.addGlobal({
-        raceiat:{},
+    video_condition: videoCondition,
+
+    $meta: {
+        video_condition: videoCondition
+    },
+
+    raceiat: {},
         //YBYB: change when copying back to the correct folder
         baseURL: './images/',
         raceSet:raceSet,
