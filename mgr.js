@@ -72,6 +72,12 @@ define(['managerAPI',
             header: 'Welcome'
         }],
 
+presurvey: [{
+    type: 'quest',
+    name: 'presurvey',
+    scriptUrl: 'presurvey.js'
+}],
+		
         preiat_instructions: [{
     type: 'message',
     name: 'preiat_instructions',
@@ -163,7 +169,8 @@ define(['managerAPI',
                 {
                     mixer: 'wrapper',
                     data: [
-                        {inherit: 'preiat_instructions'},
+                        {inherit: 'presurvey'},
+{inherit: 'preiat_instructions'},
 {inherit: 'preiat'}
                     ]
                 }
