@@ -1,29 +1,55 @@
 <%
-var respInst = "you will use the 'E' and 'I' computer keys to";
+var respInst = "use the 'E' and 'I' computer keys to";
 
 if (global.$isTouch) {
-    respInst = "you will touch the left or right side of the screen to";
+    respInst = "touch the left or right side of the screen to";
 }
 %>
 
-# Insect–Mammal IAT Instructions
+<h2>Insect–Mammal IAT Instructions</h2>
 
-Next, <%=respInst%> categorize items into groups as quickly and accurately as you can.
+<p>
+    Next, you will <%=respInst%> categorize items into groups
+    as quickly and accurately as possible.
+</p>
 
-These are the four categories:
+<p>These are the four categories:</p>
 
-**Pleasant:**  
-<%=global.posWords[0]%>, <%=global.posWords[1]%>, <%=global.posWords[2]%>, <%=global.posWords[3]%>, <%=global.posWords[4]%>, <%=global.posWords[5]%>, <%=global.posWords[6]%>, <%=global.posWords[7]%>
+<p>
+    <strong>Pleasant:</strong><br>
+    <%=global.posWords[0]%>,
+    <%=global.posWords[1]%>,
+    <%=global.posWords[2]%>,
+    <%=global.posWords[3]%>,
+    <%=global.posWords[4]%>,
+    <%=global.posWords[5]%>,
+    <%=global.posWords[6]%>,
+    <%=global.posWords[7]%>
+</p>
 
-**Unpleasant:**  
-<%=global.negWords[0]%>, <%=global.negWords[1]%>, <%=global.negWords[2]%>, <%=global.negWords[3]%>, <%=global.negWords[4]%>, <%=global.negWords[5]%>, <%=global.negWords[6]%>, <%=global.negWords[7]%>
+<p>
+    <strong>Unpleasant:</strong><br>
+    <%=global.negWords[0]%>,
+    <%=global.negWords[1]%>,
+    <%=global.negWords[2]%>,
+    <%=global.negWords[3]%>,
+    <%=global.negWords[4]%>,
+    <%=global.negWords[5]%>,
+    <%=global.negWords[6]%>,
+    <%=global.negWords[7]%>
+</p>
 
-**Insects:**  
-Bee, Wasp, Mosquito, Butterfly, Beetle, Ant
+<p>
+    <strong>Insects:</strong><br>
+    Bee, Wasp, Mosquito, Butterfly, Beetle, Ant
+</p>
 
-**Mammals:**  
-Dog, Cat, Horse, Rabbit, Deer, Dolphin
+<p>
+    <strong>Mammals:</strong><br>
+    Dog, Cat, Horse, Rabbit, Deer, Dolphin
+</p>
 
-There are seven parts. The category positions may change between parts, so read each instruction screen carefully.
-
-Start
+<p>
+    There are seven parts. The category positions may change between
+    parts, so read each instruction screen carefully.
+</p>
