@@ -229,6 +229,21 @@ control_video: [{
         });
     }
 }],
+
+postiat_instructions: [{
+    type: 'message',
+    name: 'postiat_instructions',
+    templateUrl: 'postiat_instructions.jst',
+    keys: [' ', 13]
+}],
+
+postiat: [{
+    type: 'time',
+    name: 'postiat',
+    scriptUrl: 'postiat.js'
+}],
+
+
 		
         lastpage: [{
             type: 'message',
@@ -340,7 +355,8 @@ control_video: [{
         }
     ]
 },
-
+{inherit: 'postiat_instructions'},
+{inherit: 'postiat'},
 {inherit: 'uploading'},
         {inherit: 'lastpage'},
         {inherit: 'redirect'}
