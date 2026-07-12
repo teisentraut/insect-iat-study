@@ -99,6 +99,58 @@ presurvey: [{
     scriptUrl: 'preiat.js'
 }],
 
+insect_video: [{
+    type: 'message',
+    name: 'insect_video',
+    templateUrl: 'video.jst',
+
+    data: {
+        videoUrl: 'videos/insect-video.mp4'
+    },
+
+    load: function() {
+        var video = document.getElementById('study-video');
+        var proceed = document.getElementById('video-proceed');
+        var errorMessage = document.getElementById('video-error');
+
+        proceed.style.display = 'none';
+
+        video.addEventListener('ended', function() {
+            proceed.style.display = 'block';
+        });
+
+        video.addEventListener('error', function() {
+            errorMessage.style.display = 'block';
+        });
+    }
+}],
+
+control_video: [{
+    type: 'message',
+    name: 'control_video',
+    templateUrl: 'video.jst',
+
+    data: {
+        videoUrl: 'videos/control-video.mp4'
+    },
+
+    load: function() {
+        var video = document.getElementById('study-video');
+        var proceed = document.getElementById('video-proceed');
+        var errorMessage = document.getElementById('video-error');
+
+        proceed.style.display = 'none';
+
+        video.addEventListener('ended', function() {
+            proceed.style.display = 'block';
+        });
+
+        video.addEventListener('error', function() {
+            errorMessage.style.display = 'block';
+        });
+    }
+}],
+		
         lastpage: [{
             type: 'message',
             name: 'lastpage',
@@ -164,7 +216,45 @@ presurvey: [{
         {inherit: 'intro'},
         {inherit: 'presurvey'},
 {inherit: 'preiat_instructions'},
-{inherit: 'preiat'},
+{inherit: 'preiat'},{
+    mixer: 'choose',
+
+    data: [
+        {
+            mixer: 'wrapper',
+
+            data: [
+                {
+                    type: 'setValue',
+                    variableName: 'video_condition',
+                    value: 'experimental',
+                    post: true
+                },
+
+                {
+                    inherit: 'insect_video'
+                }
+            ]
+        },
+
+        {
+            mixer: 'wrapper',
+
+            data: [
+                {
+                    type: 'setValue',
+                    variableName: 'video_condition',
+                    value: 'control',
+                    post: true
+                },
+
+                {
+                    inherit: 'control_video'
+                }
+            ]
+        }
+    ]
+},
 
 		{inherit: 'uploading'},
         {inherit: 'lastpage'},
