@@ -243,6 +243,11 @@ postiat: [{
     scriptUrl: 'postiat.js'
 }],
 
+		postsurvey: [{
+    type: 'quest',
+    name: 'postsurvey',
+    scriptUrl: 'postsurvey.js'
+}],
 
 		
         lastpage: [{
@@ -357,6 +362,7 @@ postiat: [{
 },
 {inherit: 'postiat_instructions'},
 {inherit: 'postiat'},
+{inherit: 'postsurvey'},
 {inherit: 'uploading'},
         {inherit: 'lastpage'},
         {inherit: 'redirect'}
