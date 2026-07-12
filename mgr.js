@@ -82,7 +82,9 @@ presurvey: [{
     type: 'message',
     name: 'preiat_instructions',
     templateUrl: 'preiat_instructions.jst',
-    keys: [' ', 13]
+    title: 'IAT Instructions',
+    header: 'Insect–Mammal Implicit Association Test',
+    buttonText: 'Start IAT'
 }],
 
         explicits: [{
@@ -160,22 +162,9 @@ presurvey: [{
         
         
         {inherit: 'intro'},
-        {
-            mixer:'random',
-            data:[
-                {inherit: 'explicits'},
-
-                // force the instructions to preceed the iat
-                {
-                    mixer: 'wrapper',
-                    data: [
-                        {inherit: 'presurvey'},
+        {inherit: 'presurvey'},
 {inherit: 'preiat_instructions'},
-{inherit: 'preiat'}
-                    ]
-                }
-            ]
-        },
+{inherit: 'preiat'},
 
 		{inherit: 'uploading'},
         {inherit: 'lastpage'},
