@@ -178,6 +178,12 @@ postiat: [{
     scriptUrl: 'postsurvey.js'
 }],
 
+
+debrief: [{
+    type: 'message',
+    name: 'debrief',
+    templateUrl: 'debrief.jst'
+}],
 		
         lastpage: [{
             type: 'message',
@@ -261,7 +267,8 @@ postiat: [{
 {inherit: 'postiat'},
 {inherit: 'postsurvey'},
 {inherit: 'uploading'},
-        {inherit: 'lastpage'},
+{inherit: 'debrief'},
+{inherit: 'lastpage'},
         
     ]);
 
