@@ -73,11 +73,12 @@ define(['managerAPI',
         }],
 
         preiat_instructions: [{
-    inherit: 'instructions',
+    type: 'message',
     name: 'preiat_instructions',
     templateUrl: 'preiat_instructions.jst',
     title: 'IAT Instructions',
-    header: 'Insect–Mammal Implicit Association Test'
+    header: 'Insect–Mammal Implicit Association Test',
+    buttonText: 'Start IAT'
 }],
 
         explicits: [{
