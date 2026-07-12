@@ -232,7 +232,10 @@ debrief: [{
 {
     type: 'post',
     name: 'video_condition',
-    variableName: 'video_condition'
+
+    data: {
+        video_condition: videoCondition
+    }
 },
 		
 {type: 'isTouch'},
