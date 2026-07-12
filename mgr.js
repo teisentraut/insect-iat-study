@@ -73,7 +73,7 @@ define(['managerAPI',
         }],
 
         preiat_instructions: [{
-    type: 'message',
+    inherit: 'instructions',
     name: 'preiat_instructions',
     templateUrl: 'preiat_instructions.jst',
     title: 'IAT Instructions',
