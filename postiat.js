@@ -11,59 +11,58 @@ define(
         return iatExtension({
 
             category1: {
-                name: 'Insects',
+    name: 'Insects',
 
-                title: {
-                    media: {word: 'Insects'},
-                    css: {
-                        color: '#31940F',
-                        'font-size': '1.8em'
-                    },
-                    height: 4
-                },
+    title: {
+        media: {word: 'Insects'},
+        css: {
+            color: '#31940F',
+            'font-size': '1.8em'
+        },
+        height: 4
+    },
 
-                stimulusMedia: [
-                    {word: 'Bee'},
-                    {word: 'Wasp'},
-                    {word: 'Mosquito'},
-                    {word: 'Butterfly'},
-                    {word: 'Beetle'},
-                    {word: 'Ant'}
-                ],
+    stimulusMedia: [
+        {image: 'insects/bee.jpg'},
+        {image: 'insects/wasp.jpg'},
+        {image: 'insects/mosquito.jpg'},
+        {image: 'insects/butterfly.jpg'},
+        {image: 'insects/ladybug.jpg'},
+        {image: 'insects/roach.jpg'}
+    ],
 
-                stimulusCss: {
-                    color: '#31940F',
-                    'font-size': '2.3em'
-                }
-            },
+    stimulusCss: {
+        'max-width': '300px',
+        'max-height': '240px'
+    }
+},
 
             category2: {
-                name: 'Mammals',
+    name: 'Mammals',
 
-                title: {
-                    media: {word: 'Mammals'},
-                    css: {
-                        color: '#31940F',
-                        'font-size': '1.8em'
-                    },
-                    height: 4
-                },
+    title: {
+        media: {word: 'Mammals'},
+        css: {
+            color: '#31940F',
+            'font-size': '1.8em'
+        },
+        height: 4
+    },
 
-                stimulusMedia: [
-                    {word: 'Dog'},
-                    {word: 'Cat'},
-                    {word: 'Horse'},
-                    {word: 'Rabbit'},
-                    {word: 'Deer'},
-                    {word: 'Dolphin'}
-                ],
+    stimulusMedia: [
+        {image: 'mammals/bear.jpg'},
+        {image: 'mammals/puma.jpg'},
+        {image: 'mammals/fox.jpg'},
+        {image: 'mammals/rabbit.jpg'},
+        {image: 'mammals/deer.jpg'},
+        {image: 'mammals/squirrel.jpg'}
+    ],
 
-                stimulusCss: {
-                    color: '#31940F',
-                    'font-size': '2.3em'
-                }
-            },
-
+    stimulusCss: {
+        'max-width': '300px',
+        'max-height': '240px'
+    }
+},
             attribute1: {
                 name: 'Unpleasant',
 
@@ -122,6 +121,10 @@ define(
                 }
             },
 
+base_url: {
+    image: './images/iat/'
+},
+            
             isTouch: global.$isTouch
         });
     }
