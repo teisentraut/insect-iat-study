@@ -9,10 +9,9 @@ define(['managerAPI',
 
 	var API    = new Manager();
 
-var videoCondition = API.shuffle([
-    'experimental',
-    'control'
-])[0];
+var videoCondition = Math.random() < 0.5
+    ? 'experimental'
+    : 'control';
 	
 	//const subid = Date.now().toString(16)+Math.floor(Math.random()*10000).toString(16);
 	init_data_pipe(API, 'BgBJQHJNGsbB',  {file_type:'csv'});	
