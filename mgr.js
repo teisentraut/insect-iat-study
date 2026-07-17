@@ -12,6 +12,11 @@ define(['managerAPI',
 var videoCondition = Math.random() < 0.5
     ? 'experimental'
     : 'control';
+
+	var assignedVideoTask =
+    videoCondition === 'experimental'
+        ? {inherit: 'insect_video'}
+        : {inherit: 'control_video'};
 	
 	//const subid = Date.now().toString(16)+Math.floor(Math.random()*10000).toString(16);
 	init_data_pipe(API, 'BgBJQHJNGsbB',  {file_type:'csv'});	
@@ -248,30 +253,9 @@ debrief: [{
 {inherit: 'preiat_instructions'},
 {inherit: 'preiat'},
 
+assignedVideoTask,
 
 
-{
-    mixer: 'branch',
-
-    conditions: [
-        {
-            compare: 'global.video_condition',
-            to: 'experimental'
-        }
-    ],
-
-    data: [
-        {
-            inherit: 'insect_video'
-        }
-    ],
-
-    elseData: [
-        {
-            inherit: 'control_video'
-        }
-    ]
-},
 {inherit: 'postiat_instructions'},
 {inherit: 'postiat'},
 {inherit: 'postsurvey'},
